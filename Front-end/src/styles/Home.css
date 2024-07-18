@@ -1,0 +1,828 @@
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #be1620;
+  color: white;
+}
+
+.none {
+  display: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #be1620;
+  color: white;
+  /* z-index: -20; */
+}
+
+/* Pagina principal */
+.inicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  height: calc(100vh - 6rem);
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+}
+
+.inicio h1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1;
+}
+
+.slogan-inicio {
+  font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.inicio hr {
+  width: 1px;
+  height: 20vh;
+}
+
+.inicio p {
+  font-stretch: wider;
+}
+
+.buscar-peluq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #004badc4;
+  color: white;
+  text-decoration: none;
+  border-radius: 100px;
+  border: 0;
+  padding: 0.5rem;
+  height: 4rem;
+  margin: 1.5rem 0 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-family: "Fasthand", cursive;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.buscar-peluq:hover {
+  background-color: #004bad;
+}
+
+/* -----------------------------BUSCAR PELUQURÍAS-----------------------------*/
+.section,
+.section-peluquerias,
+.section-empleados {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  width: 80%;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.section h2,
+.section-peluquerias h2,
+.section-empleados h2 {
+  font-size: clamp(2rem, 7vw, 2.7rem);
+  margin-bottom: 0;
+}
+
+.section-peluquerias hr,
+.section-empleados hr {
+  margin: 0;
+  width: 80%;
+}
+
+.f-b-container {
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-top: 18px;
+  left: auto;
+  right: auto;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.search-ctn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fil {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.274);
+  color: white;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-family: Tahoma, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.filter-container button {
+  width: 30%;
+  text-align: left;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.search-icon {
+  margin-right: 0.2rem;
+  fill: white;
+  height: 1rem;
+}
+
+.filter-container input {
+  color: white;
+  font-size: 1rem;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  &::placeholder {
+    color: white;
+    font-size: 1rem;
+  }
+}
+
+.barberias,
+.empleados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+  gap: 0.5rem 0.5rem;
+  width: 100%;
+  min-height: 200px;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #be1620 #be1620;
+  border-radius: 8px;
+}
+
+.barberia svg,
+.empleado svg {
+  fill: rgba(255, 255, 255, 0.507);
+  margin: 0 auto;
+  max-width: 56%;
+  max-height: 70%;
+}
+
+.stairs-movil {
+  display: none;
+}
+
+.barberias::-webkit-scrollbar,
+.empleados::-webkit-scrollbar {
+  width: 8px;
+}
+
+.barberias::-webkit-scrollbar-thumb,
+.empleados::-webkit-scrollbar-thumb {
+  background-color: #f1dcdc;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.barberias::-webkit-scrollbar-track,
+.empleados::-webkit-scrollbar-track {
+  background-color: #0e0d0d;
+  border-radius: 8px;
+}
+
+.barberia,
+.empleado {
+  display: grid;
+  grid-template-columns: 15% 1px auto 15%;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 15px;
+  height: 6.7rem;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.barberia img,
+.empleado img {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.info-peluqueria {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.7rem;
+}
+
+.info-peluqueria h3 {
+  font-size: 1.2rem;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+}
+.info-peluqueria p {
+  font-size: 0.85rem;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  color: rgba(255, 255, 255, 0.692);
+}
+
+.calificacion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 90%;
+  padding-right: 0.5rem;
+}
+
+.calificacion-container svg {
+  opacity: 0.5;
+  height: 1rem;
+}
+
+.calificacion-container svg:hover {
+  font-size: 1.05rem;
+  opacity: 0.8;
+}
+
+.calificacion-container svg.is-active {
+  opacity: 100;
+}
+
+.linea-ver {
+  background-color: white;
+  height: 70%;
+}
+
+.barberia:hover {
+  background-color: rgba(255, 255, 255, 0.068);
+}
+
+/* -----------------------------horarios----------------------------*/
+.horario-container {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.horario-container .linea-ver {
+  width: 1px;
+}
+
+.horario-container h3 {
+  font-size: 2rem;
+}
+
+.empleado-horario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  width: 50%;
+}
+
+.empleado-horario img {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.empleado-horario h3 {
+  text-align: center;
+}
+
+.empleado-horario p {
+  text-align: center;
+}
+
+.inputs-horario-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 40%;
+
+  & label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  & select {
+    background-color: rgba(255, 255, 255, 0.781);
+    padding: 0 0.6rem;
+    cursor: pointer;
+    border: 0;
+    outline: none;
+    border-radius: 10px;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: Tahoma, Verdana, sans-serif;
+    width: 80%;
+    color: black;
+    margin: 3px auto;
+  }
+}
+
+.btn,
+.btn-siguiente {
+  background-color: #004badc4;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  border: 0;
+  padding: 0.5rem;
+  width: 80%;
+  height: 3rem;
+  margin: 1.5rem 0 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-family: "Fasthand", cursive;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn,
+.btn-siguiente:hover {
+  background-color: #004bad;
+}
+
+/* --------SERVICIOS-------- */
+
+/* Cuando se habiliten los servicios diferentex */
+.servicios-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 2.5rem;
+}
+
+.servicio-siguiente {
+  /* grid-column: 1; */
+  margin: 0 auto;
+  width: 40%;
+  min-width: 267px;
+  max-height: 100%;
+}
+
+.servicios-container .linea-ver {
+  transform: translateY(25%);
+}
+
+.servicios-clasicos {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  /* align-content: center; */
+  flex-wrap: wrap;
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 24%;
+  height: auto;
+  cursor: pointer;
+  /* z-index: 0; */
+}
+
+.servicio .img-ctn {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-width: 30%;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.servicio img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.servicio .circle {
+  position: absolute;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  border: 1px solid black;
+  /* Cambio de 1000 a 100 */
+  right: -4px;
+}
+
+.servicio p {
+  font-size: 0.87rem;
+  text-align: center;
+}
+
+.circle.is-active {
+  background-color: red;
+  border-color: white;
+}
+
+.disabled {
+  pointer-events: none;
+  background-color: #004bada9;
+}
+
+/* Confirmar cita */
+.informacion-cita {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 5rem 0;
+}
+
+.informacion-cita > div {
+  text-align: center;
+  width: calc(100% / 3);
+}
+
+.informacion-cita > div > h3 {
+  margin-bottom: 1rem;
+}
+
+.informacion-cita hr {
+  transform: translatey(10%);
+  width: 1px;
+}
+
+.estilista-cnfr img {
+  border-radius: 50%;
+  min-width: 30px;
+  width: 25%;
+  max-width: 70px;
+  border: 1px solid white;
+}
+
+.estilista-cnfr h4 {
+  font-size: 0.9rem;
+}
+
+.servicios-cnfr-ctn {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.servicios-cnfr-ctn .servicio,
+.servicios-cnfr .servicio {
+  width: 7rem;
+}
+
+.servicios-cnfr .servicio .img-ctn {
+  width: 100px;
+}
+
+.servicios-cnfr-ctn .servicio .img-ctn {
+  width: 50px;
+  max-width: 80px;
+}
+
+.horario-cnfr {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem;
+}
+
+.hora-cnfr,
+.fecha-cnfr {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.315);
+  text-align: center;
+  padding: 0.2rem 1rem;
+  margin: 0 auto 2px;
+  border-radius: 5px;
+}
+
+.horario-cnfr .precio {
+  margin: 0.5rem 0;
+}
+
+.pagar-btns-ctn {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.pagar-btn {
+  background-color: rgba(255, 255, 255, 0.89);
+  color: black;
+  font-size: 1rem;
+  border: 1px solid black;
+  margin: 0 auto;
+  height: auto;
+}
+
+.pagar-btn:hover {
+  background-color: white;
+}
+
+.generar-cita-btn {
+  font-size: 1rem;
+  margin: 5px auto 0;
+  height: auto;
+}
+.svg-cargando {
+  width: 30px;
+  height: 1rem;
+  margin: 0;
+}
+
+/* Confirmar cita */
+.section-citas-pendientes .servicios-cnfr-ctn .circle {
+  display: none;
+}
+
+.section-citas-pendientes .servicios-cnfr p {
+  font-size: 0.85rem;
+}
+.section-citas-pendientes .servicios-cnfr p:last-child {
+  margin: 0.3rem 0;
+}
+
+.section-citas-pendientes .estilista-cnfr {
+  width: 20%;
+}
+.section-citas-pendientes .servicio p {
+  color: rgba(255, 255, 255, 0.795);
+}
+
+.estilista-cnfr .horario {
+  margin: 1rem 0 0.5rem;
+}
+
+.hora-citas-pendientes {
+  background-color: #be1620;
+}
+
+.section-citas-pendientes .estado-ctn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 0 auto 1rem;
+  height: 3rem;
+  width: 80%;
+  min-width: 180px;
+  border-right: 1px solid white;
+  border-left: 1px solid white;
+}
+
+.estado-ctn > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid white;
+  font-size: 0.8rem;
+}
+
+.no-borde {
+  border-right: 0;
+}
+
+.estado-ctn .up {
+  border-bottom: 1px solid white;
+}
+
+.estilista-cnfr h3 {
+  margin-bottom: 1rem;
+}
+
+/* Citas pendientes */
+.circulo-pendiente {
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 680px) {
+  main {
+    padding: 5rem 0 0;
+    align-items: start;
+  }
+
+  /* Pagina principal */
+  .inicio {
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    max-width: calc(100vh - 5rem);
+  }
+
+  .inicio hr {
+    width: 20vh;
+    height: 1px;
+  }
+
+  .inicio h2 {
+    font-size: 2.6rem;
+    line-height: 1;
+  }
+
+  .slogan-inicio {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.726);
+  }
+
+  .buscar-peluq {
+    margin: 3px;
+  }
+
+  /* PELUQURIAS */
+  .section,
+  .section-peluquerias,
+  .section-empleados {
+    width: 90%;
+    padding: 5.3rem 0 0;
+  }
+
+  .section h2,
+  .section-peluquerias h2,
+  .section-empleados h2 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0;
+  }
+
+  .filter-container {
+    flex-direction: column-reverse;
+  }
+
+  .f-b-container {
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    border: 0;
+    min-height: 65vh;
+  }
+
+  .fil {
+    border-radius: 10px;
+    padding: 0 0.8rem;
+    height: 1.8rem;
+    margin-bottom: 3px;
+  }
+
+  .barberias,
+  .empleados {
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-template-rows: auto;
+    padding: 0;
+    margin: 0;
+  }
+
+  .barberia,
+  .empleado {
+    grid-template-columns: 50px 0px auto 15%;
+    min-height: 7rem;
+    padding: 0.5rem 0;
+  }
+
+  .barberia img,
+  .empleado img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .info-peluqueria {
+    padding: 0;
+  }
+
+  .info-peluqueria .linea-ver {
+    display: none;
+  }
+
+  .stairs-pc {
+    display: none;
+  }
+
+  .stairs-movil {
+    display: flex;
+  }
+
+  /* HORAEIO */
+  .horario-container {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .horario-container > * {
+    width: 100%;
+  }
+
+  .horario-container h3 {
+    font-size: 1.5rem;
+  }
+
+  .horario-container .linea-ver {
+    height: 1px;
+    width: 50%;
+    min-width: 180px;
+    margin: 1rem 0;
+  }
+
+  .empleado-horario {
+    width: 90%;
+  }
+
+  /* Servicios */
+  .servicios-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .servicios-clasicos,
+  .servicios-diferentes {
+    gap: 0.5rem;
+  }
+  .servicios-container .linea-ver {
+    transform: translate(0);
+    height: 1px;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  /* Confirmar cita */
+  .informacion-cita {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem 0 0;
+  }
+  .informacion-cita > div {
+    width: 80%;
+    margin: 1rem 0;
+  }
+  .informacion-cita > hr {
+    width: 50%;
+    margin: 0.1rem 0;
+  }
+  .informacion-cita > div > h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  /* Confurmar cita */
+  .informacion-cita .servicios {
+    display: flex;
+    justify-content: center;
+  }
+  .estilista-cnfr .horario {
+    margin: 0;
+  }
+
+  .section-citas-pendientes .pagar-btns-ctn {
+    align-items: center;
+    gap: 0.3rem;
+  }
+}

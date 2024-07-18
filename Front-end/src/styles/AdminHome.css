@@ -1,0 +1,35 @@
+.btns-container-admin-home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.btns-container-admin-home a {
+  width: 80%;
+  margin: 3px 0;
+  border-radius: 12px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  height: auto;
+}
+
+.laber-search-user-from-admin-view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.laber-search-user-from-admin-view input {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  outline: none;
+  border: 0;
+}
+
+.laber-search-user-from-admin-view input::placeholder {
+  color: aliceblue;
+}

@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "bd93b79d-5334-44f0-9eaa-60a76e9ae86b",
+		"name": "correcion",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28519049"
+	},
+	"item": [
+		{
+			"name": "login Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"carlosruiz@example.com\",\r\n  \"password\": \"hashed_password_example\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/clientes/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clientes",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrarPeluqueria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Salón Glamour\",\r\n  \"direccion\": \"123 Avenida Principal, Ciudad Sol\",\r\n  \"horarioSemana\": \"9:00 AM - 8:00 PM\",\r\n  \"horarioFinSemana\": \"10:00 AM - 6:00 PM\",\r\n  \"fotoPerfil\": \"url-a-la-foto-del-perfil.jpg\",\r\n  \"clienteId\": \"664adfdd9da97d0f75d94f45\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/peluquerias/registrar/664ade779da97d0f75d94f3f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"peluquerias",
+						"registrar",
+						"664ade779da97d0f75d94f3f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
